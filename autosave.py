@@ -23,7 +23,7 @@ def eclipse_save():
     hotkey('ctrl', 'shift', 's')
 
 
-reply = raw_input("Are you using eclipse?")
+reply = raw_input("Do you want to save-all? (ctrl+shift+s). reply yes/y to save-all")
 
 while True:
     time.sleep(TIME_TO_WAIT)
