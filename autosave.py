@@ -36,14 +36,14 @@ def main():
     # gets the save interval
     time_to_wait = pyautogui.prompt(text='How long to wait between saves? (in seconds, default = 60)',
                                     title='Save Interval', default='')
-    # if cancel was pressed
-    if (time_to_wait is None) or (time_to_wait == ''):
-        time_to_wait = DEFAULT_TIME_TO_WAIT
 
     # forever
     while True:
         # wait time given
-        time.sleep(float(time_to_wait))
+        try:
+            time.sleep(float(time_to_wait))
+        except ValueError:
+            time.sleep(DEFAULT_TIME_TO_WAIT)
         print "Saving!"
         # checks if to save_all
         if save_all_reply == YES_ANSWER:
