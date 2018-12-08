@@ -43,6 +43,8 @@ def main():
         try:
             time.sleep(float(time_to_wait))
         except ValueError:
+            print "Error! Non number time recieved"
+            print "Waiting for %f seconds" %DEFAULT_TIME_TO_WAIT
             time.sleep(DEFAULT_TIME_TO_WAIT)
         print "Saving!"
         # checks if to save_all
